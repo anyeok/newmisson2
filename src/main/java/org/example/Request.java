@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,14 +23,16 @@ public class Request {
         for (String paramsRow : paramsList) {
             String[] paramsStr = paramsRow.split("=", 2);
             String key = paramsStr[0];
-            if (paramsStr[1].startsWith("&")) {
+            if (paramsStr[1].startsWith("%&")) {
                 paramsId.add(paramsStr[Integer.parseInt(paramsRow) - 1]);
+                params.put(key, Arrays.toString(paramsId.toArray()));
             } else {
                 String value = paramsStr[1];
                 params.put(key, value);
             }
         }
     }
+
 
     public String getActionCode() {
         return actionCode;

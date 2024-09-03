@@ -17,8 +17,8 @@ public class ArticleService {
         return articleRepository.findAll();
     }
 
-    public Article _getFindById(int id) {
-        return articleRepository._getFindById(id);
+    public Article findById(int id) {
+        return articleRepository.findById(id);
     }
 
     public void remove(Article article) {
@@ -27,5 +27,8 @@ public class ArticleService {
 
     public void modify(Article article, String modifySubject, String modifyContent) {
         articleRepository.modify(article, modifySubject, modifyContent);
+    }
+    public void reset(){
+        articleRepository.reset();
     }
 }
