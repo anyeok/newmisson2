@@ -2,8 +2,6 @@ package org.example.member;
 
 import org.example.Container;
 
-import java.util.List;
-
 public class MemberController {
     MemberService memberService;
 
@@ -30,9 +28,7 @@ public class MemberController {
         System.out.print("PW : ");
         String password = Container.getSc().nextLine().trim();
 
-        memberService.login(userid, password);
-
-        if (false) {
+        if (memberService.foundId(userid, password) == false) {
             System.out.print("로그인에 실패하였습니다.");
         } else {
             System.out.printf("%s님 환영합니다 !\n", userid);

@@ -1,6 +1,5 @@
 package org.example.article;
 
-import org.example.App;
 import org.example.Container;
 import org.example.Request;
 

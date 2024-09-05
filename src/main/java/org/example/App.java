@@ -3,7 +3,6 @@ package org.example;
 import org.example.article.ArticleController;
 import org.example.db.DBConnection;
 import org.example.member.MemberController;
-import org.example.member.MemberRepository;
 import org.example.system.SystemController;
 
 public class App {

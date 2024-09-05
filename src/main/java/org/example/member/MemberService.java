@@ -1,7 +1,5 @@
 package org.example.member;
 
-import org.example.article.Article;
-
 import java.util.List;
 
 public class MemberService {
@@ -22,7 +20,8 @@ public class MemberService {
     public Member findByUserIdPw(String userid, String password) {
         return MemberRepository.findByUserIdPw(userid, password);
     }
-    public boolean login(String userid, String password) {
-        return MemberRepository.login(userid, password);
+
+    public boolean foundId(String userid, String password) {
+        return MemberRepository.foundId(userid, password);
     }
 }
