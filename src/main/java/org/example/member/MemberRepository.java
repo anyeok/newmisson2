@@ -49,7 +49,6 @@ public class MemberRepository {
                 return true;
             }
         }
-        System.out.println("ID 또는 비밀번호가 잘못되었습니다.");
         return false;
     }
 }

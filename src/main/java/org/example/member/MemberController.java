@@ -20,9 +20,7 @@ public class MemberController {
         System.out.printf("%d번 회원이 등록되었습니다.\n", id);
 
     }
-
-    public void login() {
-        LoginMember loginMember = new LoginMember();
+    public boolean login() {
         System.out.print("ID : ");
         String userid = Container.getSc().nextLine().trim();
         System.out.print("PW : ");
@@ -32,13 +30,13 @@ public class MemberController {
             System.out.print("로그인에 실패하였습니다.");
         } else {
             System.out.printf("%s님 환영합니다 !\n", userid);
-            loginMember.setLoginmember(userid);
+            System.out.print("명령) ");
         }
+        return false;
     }
 
     public void logout() {
-        LoginMember loginMember = new LoginMember();
-        System.out.print("로그아웃 되었습니다.");
-        loginMember.setLoginmember("로그아웃");
+        System.out.println("로그아웃 되었습니다.");
+        System.out.print("명령) ");
     }
 }

@@ -21,6 +21,7 @@ public class ArticleController {
         int id = articleService.create(subject, content);
 
         System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
+        System.out.print("명령) ");
     }
 
     public void list() {
@@ -31,6 +32,7 @@ public class ArticleController {
             Article article = articleList.get(i);
             System.out.printf("%d / %s / %s\n", article.getId(), article.getSubject(), article.getContent());
         }
+        System.out.print("명령) ");
     }
 
     public void delete(Request request) {
@@ -44,9 +46,11 @@ public class ArticleController {
 
         if (article == null) {
             System.out.printf("%d번 게시물은 존재하지 않습니다.\n", id);
+            System.out.print("명령) ");
         } else {
             articleService.remove(article);
             System.out.printf("%d번 게시물이 삭제되었습니다.\n", id);
+            System.out.print("명령) ");
         }
     }
 
@@ -73,12 +77,14 @@ public class ArticleController {
             articleService.modify(article, modifySubject, modifyContent);
 
             System.out.printf("%d번 게시물이 수정되었습니다.\n", id);
+            System.out.print("명령) ");
         }
     }
 
     public void reset() {
         System.out.println("리셋 되었습니다.");
         articleService.reset();
+        System.out.print("명령) ");
     }
 
     private int _getIntParam(String id) {

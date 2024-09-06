@@ -11,6 +11,7 @@ public class Container {
     public static void init() {
         sc = new Scanner(System.in);
         System.out.println("== 게시판 앱 ==");
+        System.out.println("로그인 해주세요. (아이디가 없다면 회원가입 해주세요)");
     }
 
     public static void close() {
