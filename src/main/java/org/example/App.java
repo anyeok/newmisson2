@@ -31,10 +31,6 @@ public class App {
             Request request = new Request(command);
             if (islogin == 1) {
                 LogInCommands(request);
-            }
-            if (request.getActionCode().equals("종료")) {
-                systemController.exit();
-                break;
             } else {
                 LogOutCommands(request);
             }
@@ -43,7 +39,9 @@ public class App {
 
 
     private void LogOutCommands(Request request) {
-        if (request.getActionCode().startsWith("회원가입")) {
+        if (request.getActionCode().equals("종료")) {
+            systemController.exit();
+        } else if (request.getActionCode().startsWith("회원가입")) {
             memberController.singup();
         } else if (request.getActionCode().equals("로그인")) {
             memberController.login();
@@ -72,7 +70,6 @@ public class App {
             memberController.logout();
             islogin = 0;
         } else {
-            System.out.println("잘못된 명령어입니다.");
             LogInCommands(request);
         }
     }
