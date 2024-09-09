@@ -44,7 +44,7 @@ public class MemberRepository {
         for (Member member : memberList) {
             String storedUserid = member.getUserid();
             String storedPassword = member.getPassword();
-            if (storedUserid != null && storedUserid.equalsIgnoreCase(userid) &&
+            if (storedUserid != null && storedUserid.equals(userid) &&
                     storedPassword != null && storedPassword.equals(password)) {
                 return true;
             }
