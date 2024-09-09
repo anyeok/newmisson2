@@ -26,8 +26,9 @@ public class MemberController {
         System.out.print("PW : ");
         String password = Container.getSc().nextLine().trim();
 
-        if (memberService.foundId(userid, password) == false) {
-            System.out.print("로그인에 실패하였습니다.");
+        if (!memberService.foundId(userid, password)) {
+            System.out.println("로그인에 실패하였습니다. 다시 로그인 해주세요.");
+            return login();
         } else {
             System.out.printf("%s님 환영합니다 !\n", userid);
             System.out.print("명령) ");
