@@ -45,6 +45,7 @@ public class App {
             memberController.singup();
         } else if (request.getActionCode().equals("로그인")) {
             memberController.login();
+            islogin = 1;
         } else {
             System.out.println("잘못된 명령어입니다.");
             System.out.println("로그인 해주세요. (아이디가 없다면 회원가입 해주세요)");
